@@ -4,6 +4,7 @@ import { Field, FieldGroup, FieldLabel, FieldSet } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { LucideSave, LucidePencil, LucidePlus, LucideTrash } from "lucide-react";
+import Link from "next/link";
 
 const AddRecipeForm = () => {
   return (
@@ -48,8 +49,10 @@ const AddRecipeForm = () => {
           <LucideSave />
           Save Recipe
         </Button>
-        <Button className="w-full">
-          Cancel
+        <Button className="w-full" asChild>
+          <Link href="/recipes">
+            Cancel
+          </Link>
         </Button>
       </div>
     </form>

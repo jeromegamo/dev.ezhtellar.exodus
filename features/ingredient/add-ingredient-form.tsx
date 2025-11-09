@@ -3,13 +3,18 @@ import { Field, FieldGroup, FieldLabel, FieldSet } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Array } from "effect";
+import { redirect } from "next/navigation";
 
 const AddIngredientFrom = () => {
-  const addIngredient = (formData: FormData) => { }
+  const addIngredient = async (formData: FormData) => {
+    "use server";
+    redirect("/recipes/1/edit");
+  }
 
   const unitsOfMeasurement = [
     "each",
     "cup",
+    "large",
     "gram",
     "kilogram",
     "ounces",
@@ -39,7 +44,7 @@ const AddIngredientFrom = () => {
               </SelectTrigger>
               <SelectContent>
                 {Array.map(unitsOfMeasurement, unit => (
-                  <SelectItem value={unit}>{unit}</SelectItem>
+                  <SelectItem key={unit} value={unit}>{unit}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -50,7 +55,7 @@ const AddIngredientFrom = () => {
           </Field>
 
           <Field orientation="horizontal">
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Save</Button>
             <Button variant="outline" type="button">
               Cancel
             </Button>

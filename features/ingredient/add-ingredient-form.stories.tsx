@@ -1,4 +1,4 @@
-import AddIngredientFrom from '@/features/add-ingredient-form';
+import AddIngredientFrom from '@/features/ingredient/add-ingredient-form';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
