@@ -1,7 +1,7 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { RECIPE_LIST_ITEMS } from "@/features/recipe-list/recipe-list.viewModel";
 import { Array } from "effect";
-
+import Link from "next/link";
 
 const RecipeList = () => {
   return (
@@ -22,7 +22,11 @@ const RecipeList = () => {
           {Array.map(RECIPE_LIST_ITEMS, (item, index) => (
             <TableRow key={index}>
               <TableCell className="font-medium capitalize">{item.mealType}</TableCell>
-              <TableCell>{item.name}</TableCell>
+              <TableCell>
+                <Link href={`/recipes/${item.slug}`}>
+                  {item.name}
+                </Link>
+              </TableCell>
               <TableCell className="text-right">{item.calories}</TableCell>
               <TableCell className="text-right">{item.protein}</TableCell>
               <TableCell className="text-right">{item.carbohydrates}</TableCell>
