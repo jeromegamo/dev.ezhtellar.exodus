@@ -4,11 +4,11 @@ import Link from "next/link"
 
 const AppHeader = () => {
   return (
-    
     <nav
       className="
         fixed left-0 right-0 top-0 z-10
         border-b w-full flex py-2.5 px-5 justify-between
+        bg-background/95
       "
     >
       <div className="flex align-items gap-x-2">
