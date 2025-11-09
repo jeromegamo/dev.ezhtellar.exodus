@@ -1,9 +1,9 @@
-import AddIngredientFrom from '@/features/ingredient/add-ingredient-form';
+import EditInstructionForm from '@/features/instruction/edit-instruction-form';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
-  component: AddIngredientFrom,
-} satisfies Meta<typeof AddIngredientFrom>;
+  component: EditInstructionForm,
+} satisfies Meta<typeof EditInstructionForm>;
 
 export default meta;
 

@@ -1,9 +1,9 @@
-import AddRecipeForm from "@/features/add-recipe-form/add-recipe-form";
+import EditRecipeForm from "@/features/edit-recipe-form/edit-recipe-form";
 
-const AddRecipePage = () => {
+const EditRecipePage = () => {
   return (
-    <AddRecipeForm />
+    <EditRecipeForm />
   );
 }
 
-export default AddRecipePage;
+export default EditRecipePage;

@@ -5,7 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Array } from "effect";
 import { redirect } from "next/navigation";
 
-const AddIngredientFrom = () => {
+const EditIngredientFrom = () => {
   const addIngredient = async (formData: FormData) => {
     "use server";
     redirect("/recipes/1/edit");
@@ -66,4 +66,4 @@ const AddIngredientFrom = () => {
   )
 }
 
-export default AddIngredientFrom;
+export default EditIngredientFrom;

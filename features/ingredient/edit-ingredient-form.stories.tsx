@@ -1,9 +1,9 @@
-import AddRecipeForm from '@/features/add-recipe-form/add-recipe-form';
+import EditIngredientFrom from '@/features/ingredient/edit-ingredient-form';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
-  component: AddRecipeForm,
-} satisfies Meta<typeof AddRecipeForm>;
+  component: EditIngredientFrom,
+} satisfies Meta<typeof EditIngredientFrom>;
 
 export default meta;
 

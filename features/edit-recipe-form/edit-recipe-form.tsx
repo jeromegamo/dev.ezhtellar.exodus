@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { LucideSave, LucidePencil, LucidePlus, LucideTrash } from "lucide-react";
 import Link from "next/link";
 
-const AddRecipeForm = () => {
+const EditRecipeForm = () => {
   return (
     <form>
       <h1 className="text-3xl mb-6">Recipe</h1>
@@ -39,9 +39,11 @@ const AddRecipeForm = () => {
         <EditableInstructionItem />
         <EditableInstructionItem />
         <EditableInstructionItem />
-        <Button>
-          <LucidePlus />
-          Add Instruction
+        <Button asChild>
+          <Link href="/recipes/1/edit/instruction">
+            <LucidePlus />
+            Add Instruction
+          </Link>
         </Button>
       </FieldSet>
       <div className="mt-2 flex flex-col gap-y-2" >
@@ -59,7 +61,7 @@ const AddRecipeForm = () => {
   )
 }
 
-export default AddRecipeForm;
+export default EditRecipeForm;
 
 const EditableIngredientItem = () => {
   return (
@@ -70,9 +72,11 @@ const EditableIngredientItem = () => {
         </div>
 
         <div className="mt-2 flex flex-col gap-y-2" >
-          <Button className="w-full" size="icon">
-            <LucidePencil />
-            Edit
+          <Button className="w-full" size="icon" asChild>
+            <Link href="/recipes/1/edit/ingredient">
+              <LucidePencil />
+              Edit
+            </Link>
           </Button>
           <Button className="w-full" size="icon">
             <LucideTrash />
@@ -97,9 +101,11 @@ const EditableInstructionItem = () => {
             </div>
 
             <div className="mt-2 flex flex-col gap-y-2">
-                <Button className="w-full" size="icon">
+                <Button className="w-full" size="icon" asChild>
+                  <Link href="/recipes/1/edit/instruction">
                     <LucidePencil />
                     Edit
+                  </Link>
                 </Button>
                 <Button className="w-full" size="icon">
                     <LucideTrash />
