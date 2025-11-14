@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-const Recipe = () => {
+const RecipeSingle = () => {
   return (
     <div>
       <h1 className="text-4xl font-extrabold tracking-tight text-balance">
@@ -78,7 +78,7 @@ const Recipe = () => {
   )
 }
 
-export default Recipe;
+export default RecipeSingle;
 
 const Em = ({ children }: PropsWithChildren) => {
   return (  

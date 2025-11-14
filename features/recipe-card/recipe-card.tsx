@@ -1,11 +1,11 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { RecipeListItem } from "@/features/recipe-list/recipe-list.viewModel"
+import Recipe from "@/domain/Recipe/Recipe"
 import Link from "next/link"
 
 export type RecipeCardProps = {
-  recipeItem: RecipeListItem  
+  recipeItem: Recipe
 }
 
 const RecipeCard = ({
@@ -18,7 +18,7 @@ const RecipeCard = ({
           {recipeItem.name}
         </CardTitle>
         <CardDescription>
-          <Badge>{recipeItem.mealType}</Badge>
+          <Badge>{recipeItem.classification}</Badge>
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -28,7 +28,7 @@ const RecipeCard = ({
               Calories
             </div>
             <div className="text-right">
-              {recipeItem.calories}
+              {recipeItem.macros.calories}
             </div>
           </div>
           <div className="flex flex-col">
@@ -36,7 +36,7 @@ const RecipeCard = ({
               Protein
             </div>
             <div className="text-right">
-              {recipeItem.protein}
+              {recipeItem.macros.protein}
             </div>
           </div>
           <div className="flex flex-col">
@@ -44,7 +44,7 @@ const RecipeCard = ({
               Carbohydrates
             </div>
             <div className="text-right">
-              {recipeItem.carbohydrates}
+              {recipeItem.macros.carbohydrates}
             </div>
           </div>
           <div className="flex flex-col">
@@ -52,7 +52,7 @@ const RecipeCard = ({
               Fat
             </div>
             <div className="text-right">
-              {recipeItem.fat}
+              {recipeItem.macros.fat}
             </div>
           </div>
         </div>

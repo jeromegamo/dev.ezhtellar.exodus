@@ -1,8 +1,8 @@
-import Recipe from "@/features/recipe/recipe";
+import RecipeSingle from "@/features/recipe-single/recipe-single";
 
 const RecipeItemPage = () => {
   return (
-    <Recipe />
+    <RecipeSingle />
   );
 }
 

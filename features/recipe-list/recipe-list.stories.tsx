@@ -1,3 +1,4 @@
+import RECIPES_MOCK from '@/domain/Recipe/Recipe.mock';
 import RecipeList from '@/features/recipe-list/recipe-list';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
@@ -9,4 +10,8 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = { };
+export const Primary: Story = {
+  args: {
+    recipeListItems: RECIPES_MOCK
+  } 
+};

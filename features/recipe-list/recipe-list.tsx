@@ -1,11 +1,18 @@
 import { Button } from "@/components/ui/button";
+import Recipe from "@/domain/Recipe/Recipe";
 import RecipeCard from "@/features/recipe-card/recipe-card";
-import { RECIPE_LIST_ITEMS } from "@/features/recipe-list/recipe-list.viewModel";
 import { Array } from "effect";
 import { LucidePlus } from "lucide-react";
 import Link from "next/link";
 
-const RecipeList = () => {
+export type RecipeListProps = {
+  recipeListItems: Recipe[]
+}
+
+const RecipeList = ({
+  recipeListItems
+}: RecipeListProps) => {
+
   return (
     <div>
       <div className="flex justify-between">
@@ -17,7 +24,7 @@ const RecipeList = () => {
         </Button>
       </div>
       <div className="flex flex-col gap-4 mt-4">
-        {Array.map(RECIPE_LIST_ITEMS, (item, index) => (
+        {Array.map(recipeListItems, (item, index) => (
           <RecipeCard key={index} recipeItem={item} />
         ))}
       </div>

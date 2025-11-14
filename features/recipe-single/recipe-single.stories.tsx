@@ -1,9 +1,9 @@
-import Recipe from '@/features/recipe/recipe';
+import RecipeSingle from '@/features/recipe-single/recipe-single';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
-  component: Recipe,
-} satisfies Meta<typeof Recipe>;
+  component: RecipeSingle,
+} satisfies Meta<typeof RecipeSingle>;
 
 export default meta;
 
