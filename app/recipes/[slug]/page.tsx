@@ -1,8 +1,11 @@
+import RecipeRepo from "@/domain/RecipeRepo";
 import RecipeSingle from "@/features/recipe-single/recipe-single";
 
-const RecipeItemPage = () => {
+const RecipeItemPage = async (props: PageProps<'/recipes/[slug]'>) => {
+  const { slug } = await props.params;
+  const recipe = await RecipeRepo.findRecipeBySlug(slug);
   return (
-    <RecipeSingle />
+    <RecipeSingle recipe={recipe} />
   );
 }
 

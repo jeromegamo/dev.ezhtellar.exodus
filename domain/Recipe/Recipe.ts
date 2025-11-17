@@ -1,6 +1,6 @@
 import { Option } from "effect"
 import Ingredient from "../Ingredients/Ingredients"
-import SubRecipe from "@/domain/SubRecipe"
+import GroupedIngredient from "@/domain/GroupedIngredient/GroupedIngredient"
 import StepInstrucion from "@/domain/StepInstructions/StepInstruction"
 
 export type RecipeClassification =
@@ -30,6 +30,7 @@ export default interface Recipe {
   name: string
   slug: string
   macros: MacroNutrients
-  ingredients: Option.Option<(Ingredient | SubRecipe)[]>
+  ingredients: Option.Option<Ingredient[]>
+  groupedIngredients: Option.Option<GroupedIngredient[]>
   instructions: Option.Option<StepInstrucion[]>
 }

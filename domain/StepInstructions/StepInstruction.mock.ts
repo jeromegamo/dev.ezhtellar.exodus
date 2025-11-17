@@ -1,6 +1,6 @@
-import StepInstrucion from "@/domain/StepInstructions/StepInstruction";
+import StepInstruction from "@/domain/StepInstructions/StepInstruction";
 
-const INSTRUCTIONS: StepInstrucion[] = [
+const INSTRUCTIONS_MOCK: StepInstruction[] = [
   /**
    * Recipe 1
    */
@@ -162,4 +162,4 @@ const INSTRUCTIONS: StepInstrucion[] = [
   }
 ]
 
-export default INSTRUCTIONS;
+export default INSTRUCTIONS_MOCK;

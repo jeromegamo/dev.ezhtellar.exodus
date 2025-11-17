@@ -21,7 +21,8 @@ const RECIPES_MOCK: Recipe[] = [
           tangy green tomatillos instead of red salsa.    
       `),
       ingredients: Option.none(),
-      instructions: Option.none()
+      instructions: Option.none(),
+      groupedIngredients: Option.none()
   },
   {
       id: "recipe-2",
@@ -43,7 +44,8 @@ const RECIPES_MOCK: Recipe[] = [
          Impress your friends, impress yourself.     
       `),
       ingredients: Option.none(),
-      instructions: Option.none()
+      instructions: Option.none(),
+      groupedIngredients: Option.none()
   },
   {
       id: "recipe-3",
@@ -58,9 +60,16 @@ const RECIPES_MOCK: Recipe[] = [
           carbohydrates: 23.5,
           fat: 14.1
       },
-      headnote: Option.none(),
+      headnote: Option.some(`
+         Traditional fattoush salad is the Mediterranean equivalent of a Caesar salad, but with fried pita
+         chunks instead of croutons and an olive-oil-based dressing instead of a creamy dressing. In our
+         lighter version, the pita is cut into thin strips and toasted rather than fried, and the dressing
+         is bursting with tangy lemon and sumac, which is one of our favorite spices (and not just because we
+         love the deep red color).     
+      `),
       ingredients: Option.none(),
-      instructions: Option.none()
+      instructions: Option.none(),
+      groupedIngredients: Option.none()
   },
   {
       id: "recipe-4",
@@ -77,7 +86,8 @@ const RECIPES_MOCK: Recipe[] = [
       },
       headnote: Option.none(),
       ingredients: Option.none(),
-      instructions: Option.none()
+      instructions: Option.none(),
+      groupedIngredients: Option.none()
   },
   {
       id: "recipe-5",
@@ -94,7 +104,8 @@ const RECIPES_MOCK: Recipe[] = [
       },
       headnote: Option.none(),
       ingredients: Option.none(),
-      instructions: Option.none()
+      instructions: Option.none(),
+      groupedIngredients: Option.none()
   },
   {
       id: "recipe-6",
@@ -111,7 +122,8 @@ const RECIPES_MOCK: Recipe[] = [
       },
       headnote: Option.none(),
       ingredients: Option.none(),
-      instructions: Option.none()
+      instructions: Option.none(),
+      groupedIngredients: Option.none()
   },
   {
       id: "recipe-7",
@@ -128,7 +140,8 @@ const RECIPES_MOCK: Recipe[] = [
       },
       headnote: Option.none(),
       ingredients: Option.none(),
-      instructions: Option.none()
+      instructions: Option.none(),
+      groupedIngredients: Option.none()
   },
   {
       id: "recipe-8",
@@ -145,7 +158,8 @@ const RECIPES_MOCK: Recipe[] = [
       },
       headnote: Option.none(),
       ingredients: Option.none(),
-      instructions: Option.none()
+      instructions: Option.none(),
+      groupedIngredients: Option.none()
   },
   {
       id: "recipe-9",
@@ -162,7 +176,8 @@ const RECIPES_MOCK: Recipe[] = [
       },
       headnote: Option.none(),
       ingredients: Option.none(),
-      instructions: Option.none()
+      instructions: Option.none(),
+      groupedIngredients: Option.none()
   },
 ]
 

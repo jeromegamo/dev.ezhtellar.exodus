@@ -1,8 +1,8 @@
 import { Option } from "effect";
 import Ingredient from "@/domain/Ingredients/Ingredients";
-import SubRecipe from "@/domain/SubRecipe";
+import GroupedIngredient from "@/domain/GroupedIngredient/GroupedIngredient";
 
-const INGREDIENT_MOCK: (Ingredient | SubRecipe)[] = [
+const INGREDIENT_MOCK: Ingredient[] = [
   /**
    * Recipe 1
    */
@@ -27,10 +27,10 @@ const INGREDIENT_MOCK: (Ingredient | SubRecipe)[] = [
     description: "large eggs",
     multiplier: 4,
   }),
-  SubRecipe.make({
+  Ingredient.make({
     id: "ingredient-4",
     recipeId: "recipe-1",
-    subRecipeId: "recipe-9",
+    description: "Tomatillo Salsa"
   }),
   Ingredient.make({
     id: "ingredient-5",
@@ -151,7 +151,26 @@ const INGREDIENT_MOCK: (Ingredient | SubRecipe)[] = [
         value: "1",
         unit: "cup"
       })
-  })
+  }),
+  /**
+   * Recipe 3
+   */
+  Ingredient.make({
+      id: "ingredient-18",
+      recipeId: "recipe-3",
+      description: "Zest of Lemon",
+      multiplier: 1
+  }),
+  Ingredient.make({
+      id: "ingredient-19",
+      recipeId: "recipe-3",
+      description: "Lemon Juice",
+      qualifier: Option.some("fresh"),
+      measurement: Option.some({
+        value: "1",
+        unit: "tablespoon"
+      })
+  }),
 ]
 
 export default INGREDIENT_MOCK;
