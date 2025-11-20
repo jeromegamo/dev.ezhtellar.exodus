@@ -1,5 +1,5 @@
 import { Data } from "effect"
-import Ingredient from "../Ingredients/Ingredients"
+import Ingredient from "./Ingredients"
 
 interface GroupedIngredient {
   id: string

@@ -1,6 +1,6 @@
 import { Option } from "effect";
-import Ingredient from "@/domain/Ingredients/Ingredients";
-import GroupedIngredient from "@/domain/GroupedIngredient/GroupedIngredient";
+import Ingredient from "@/domain/Ingredients";
+import GroupedIngredient from "@/domain/GroupedIngredient";
 
 const INGREDIENT_MOCK: Ingredient[] = [
   /**

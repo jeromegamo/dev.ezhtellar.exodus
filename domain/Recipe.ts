@@ -1,7 +1,7 @@
 import { Option } from "effect"
-import Ingredient from "../Ingredients/Ingredients"
-import GroupedIngredient from "@/domain/GroupedIngredient/GroupedIngredient"
-import StepInstrucion from "@/domain/StepInstructions/StepInstruction"
+import Ingredient from "@/domain/Ingredients"
+import GroupedIngredient from "@/domain/GroupedIngredient"
+import StepInstrucion from "@/domain/StepInstruction"
 
 export type RecipeClassification =
   | "breakfast"

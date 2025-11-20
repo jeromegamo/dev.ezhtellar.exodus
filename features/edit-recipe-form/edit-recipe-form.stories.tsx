@@ -1,5 +1,7 @@
+import RECIPES_MOCK from '@/domain/RecipeRepo/Recipe.mock';
 import EditRecipeForm from '@/features/edit-recipe-form/edit-recipe-form';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Option } from "effect";
 
 const meta = {
   component: EditRecipeForm,
@@ -9,4 +11,8 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = { };
+export const Primary: Story = {
+  args: {
+    recipe: Option.some(RECIPES_MOCK[0])
+  }
+};

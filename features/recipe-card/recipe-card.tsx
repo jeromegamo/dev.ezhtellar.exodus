@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import Recipe from "@/domain/Recipe/Recipe"
+import Recipe from "@/domain/Recipe"
 import Link from "next/link"
 
 export type RecipeCardProps = {

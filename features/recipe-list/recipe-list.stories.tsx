@@ -1,4 +1,4 @@
-import RECIPES_MOCK from '@/domain/Recipe/Recipe.mock';
+import RECIPES_MOCK from '@/domain/RecipeRepo/Recipe.mock';
 import RecipeList from '@/features/recipe-list/recipe-list';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 

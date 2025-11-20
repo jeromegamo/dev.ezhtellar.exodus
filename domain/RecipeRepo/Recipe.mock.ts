@@ -1,5 +1,5 @@
 import { Option } from "effect";
-import Recipe from "@/domain/Recipe/Recipe";
+import Recipe from "@/domain/Recipe";
 
 const RECIPES_MOCK: Recipe[] = [
   {
@@ -15,11 +15,9 @@ const RECIPES_MOCK: Recipe[] = [
           carbohydrates: 37,
           fat: 17.4
       },
-      headnote: Option.some(`
-          Chilaquiles are essentially corn tortilla pieces sautéed in a little oil, then simmered with salsa,
-          cheese, beans, and eggs—although what your chilaquiles include is up to you. This version uses
-          tangy green tomatillos instead of red salsa.    
-      `),
+      headnote: Option.some(`Chilaquiles are essentially corn tortilla pieces sautéed in a little oil,\
+then simmered with salsa, cheese, beans, and eggs—although what your chilaquiles include is up to you.\
+This version uses tangy green tomatillos instead of red salsa.`),
       ingredients: Option.none(),
       instructions: Option.none(),
       groupedIngredients: Option.none()
@@ -37,12 +35,10 @@ const RECIPES_MOCK: Recipe[] = [
           carbohydrates: 8.1,
           fat: 10.6
       },
-      headnote: Option.some(`
-         This light and creamy onion soup gets its texture from oat or almond milk. Or, if you want a more
-         indulgent treat, you could stir in a little half-and-half at the end to enrich the soup. Either way,
-         this oniony soup is delicious and satisfying, especially with its roasted onion rings on top.
-         Impress your friends, impress yourself.     
-      `),
+      headnote: Option.some(`This light and creamy onion soup gets its texture from oat or almond milk.\
+Or, if you want a more indulgent treat, you could stir in a little half-and-half at the end to enrich the\
+soup. Either way, this oniony soup is delicious and satisfying, especially with its roasted onion rings on\
+top. Impress your friends, impress yourself.`),
       ingredients: Option.none(),
       instructions: Option.none(),
       groupedIngredients: Option.none()
@@ -60,13 +56,11 @@ const RECIPES_MOCK: Recipe[] = [
           carbohydrates: 23.5,
           fat: 14.1
       },
-      headnote: Option.some(`
-         Traditional fattoush salad is the Mediterranean equivalent of a Caesar salad, but with fried pita
-         chunks instead of croutons and an olive-oil-based dressing instead of a creamy dressing. In our
-         lighter version, the pita is cut into thin strips and toasted rather than fried, and the dressing
-         is bursting with tangy lemon and sumac, which is one of our favorite spices (and not just because we
-         love the deep red color).     
-      `),
+      headnote: Option.some(`Traditional fattoush salad is the Mediterranean equivalent of a Caesar salad,\
+but with fried pita chunks instead of croutons and an olive-oil-based dressing instead of a creamy dressing.\
+In our lighter version, the pita is cut into thin strips and toasted rather than fried, and the dressing is\
+bursting with tangy lemon and sumac, which is one of our favorite spices (and not just because we love the\
+deep red color).`),
       ingredients: Option.none(),
       instructions: Option.none(),
       groupedIngredients: Option.none()

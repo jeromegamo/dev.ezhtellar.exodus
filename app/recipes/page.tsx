@@ -1,5 +1,5 @@
-import Recipe from "@/domain/Recipe/Recipe";
-import RecipeRepo from "@/domain/RecipeRepo";
+import Recipe from "@/domain/Recipe";
+import RecipeRepo from "@/domain/RecipeRepo/RecipeRepo";
 import RecipeList from "@/features/recipe-list/recipe-list";
 
 const RecipesPage = async () => {

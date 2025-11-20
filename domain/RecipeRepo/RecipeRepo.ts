@@ -1,8 +1,8 @@
-import GROUPED_INGREDIENTS from "@/domain/GroupedIngredient/GroupedIngredient.mock";
-import INGREDIENT_MOCK from "@/domain/Ingredients/Ingredient.mock";
-import Recipe from "@/domain/Recipe/Recipe";
-import RECIPES_MOCK from "@/domain/Recipe/Recipe.mock";
-import INSTRUCTIONS from "@/domain/StepInstructions/StepInstruction.mock";
+import GROUPED_INGREDIENTS from "@/domain/RecipeRepo/GroupedIngredient.mock";
+import INGREDIENT_MOCK from "@/domain/RecipeRepo/Ingredient.mock";
+import Recipe from "@/domain/Recipe";
+import RECIPES_MOCK from "@/domain/RecipeRepo/Recipe.mock";
+import INSTRUCTIONS from "@/domain/RecipeRepo/StepInstruction.mock";
 import { Array, Option, pipe } from "effect";
 
 const getAll = async () => {

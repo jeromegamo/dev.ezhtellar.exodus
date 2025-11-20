@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Recipe from "@/domain/Recipe/Recipe";
+import Recipe from "@/domain/Recipe";
 import RecipeCard from "@/features/recipe-card/recipe-card";
 import { Array } from "effect";
 import { LucidePlus } from "lucide-react";

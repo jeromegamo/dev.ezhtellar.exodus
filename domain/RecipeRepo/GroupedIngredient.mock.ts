@@ -1,5 +1,5 @@
-import GroupedIngredient from "@/domain/GroupedIngredient/GroupedIngredient";
-import Ingredient from "@/domain/Ingredients/Ingredients";
+import GroupedIngredient from "@/domain/GroupedIngredient";
+import Ingredient from "@/domain/Ingredients";
 import { Option } from "effect"
 
 const GROUPED_INGREDIENTS: GroupedIngredient[] = [
@@ -22,7 +22,7 @@ const GROUPED_INGREDIENTS: GroupedIngredient[] = [
             recipeId: "recipe-1",
             description: "Large Onion",
             qualifier: Option.some("diced"),
-            multiplier: 0
+            multiplier: 1
         }),
         Ingredient.make({
             id: "ingredient-102",

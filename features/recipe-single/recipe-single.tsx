@@ -1,10 +1,13 @@
-import Recipe from "@/domain/Recipe/Recipe";
+import Recipe from "@/domain/Recipe";
 import { Option, String } from "effect";
 import { notFound } from "next/navigation";
 import { Fragment, PropsWithChildren } from "react";
 import { Array } from "effect";
-import Ingredient from "@/domain/Ingredients/Ingredients";
-import GroupedIngredient from "@/domain/GroupedIngredient/GroupedIngredient";
+import Ingredient from "@/domain/Ingredients";
+import GroupedIngredient from "@/domain/GroupedIngredient";
+import { LucideSquarePen } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export type RecipeSingleProps = {
   recipe: Option.Option<Recipe>
@@ -21,7 +24,7 @@ const RecipeSingle = ({
 
   const getIngredientItem = (ingredient: Ingredient) => (
     <li key={ingredient.id} className="lowercase">
-      {ingredient.multiplier > 1 
+      {ingredient.multiplier > 0
         ? `${ingredient.multiplier} ` 
         : String.empty 
       }
@@ -49,10 +52,19 @@ const RecipeSingle = ({
   return maybeRecipe.pipe(
     Option.andThen(recipe => (
     <div>
-      <h1 className="text-4xl font-extrabold tracking-tight text-balance">
-        {recipe.name}
-      </h1>
-      <p>{recipe.headnote.pipe(Option.getOrElse(() => String.empty))}</p>
+      <div className="flex flex-row justify-between items-center">
+        <h1 className="flex-1 text-4xl font-extrabold tracking-tight text-balance">
+          {recipe.name}
+        </h1>
+        <Button asChild>
+          <Link href={`/recipes/${recipe.slug}/edit`}>
+            <LucideSquarePen />
+          </Link>
+        </Button>
+      </div>
+      <p className="mt-2">
+        {recipe.headnote.pipe(Option.getOrElse(() => String.empty))}
+      </p>
       <h2 className="mt-6 text-3xl font-semibold tracking-tight">Ingredients</h2>
       <ul className="ml-2 [&>li]:mt-2">
         {recipe.ingredients.pipe(

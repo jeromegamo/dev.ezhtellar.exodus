@@ -1,4 +1,4 @@
-import StepInstruction from "@/domain/StepInstructions/StepInstruction";
+import StepInstruction from "@/domain/StepInstruction";
 
 const INSTRUCTIONS_MOCK: StepInstruction[] = [
   /**

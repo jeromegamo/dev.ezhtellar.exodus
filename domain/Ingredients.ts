@@ -2,6 +2,7 @@ import { PartialProps } from "@/lib/type-utils"
 import { Data, Option } from "effect"
 
 export interface Measurement {
+  // type: "weight" | "volume" | "amount"
   value: string
   unit: string
 }
@@ -12,7 +13,8 @@ interface Ingredient {
   recipeId: string
   description: string
   qualifier: Option.Option<string>
-  multiplier: number
+  // deprecated
+  multiplier: number 
   measurement: Option.Option<Measurement>
 }
 

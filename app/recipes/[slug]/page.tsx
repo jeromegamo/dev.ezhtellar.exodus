@@ -1,4 +1,4 @@
-import RecipeRepo from "@/domain/RecipeRepo";
+import RecipeRepo from "@/domain/RecipeRepo/RecipeRepo";
 import RecipeSingle from "@/features/recipe-single/recipe-single";
 
 const RecipeItemPage = async (props: PageProps<'/recipes/[slug]'>) => {
