@@ -1,7 +1,8 @@
 "use server";
-import AddIngredientSchema from "@/features/actions/add-ingredient-schema";
-import { Array, Either, ParseResult, pipe, Schema, Option } from "effect";
+import { Array, Either, Option,ParseResult, pipe, Schema } from "effect";
 import { redirect } from "next/navigation";
+
+import AddIngredientSchema from "@/features/actions/add-ingredient-schema";
 
 type AddIngredientState = {
   formData: {

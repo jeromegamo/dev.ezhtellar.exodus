@@ -1,6 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
+
 import RECIPES_MOCK from '@/domain/RecipeRepo/Recipe.mock';
 import RecipeList from '@/features/recipe-list/recipe-list';
-import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
   component: RecipeList,

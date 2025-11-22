@@ -1,17 +1,25 @@
 "use client";
+import { Array, Option, pipe } from "effect";
+import { useActionState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { Field, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import GroupedIngredient from "@/domain/GroupedIngredient";
+import Ingredient from "@/domain/Ingredient";
 import addIngredient from "@/features/actions/add-ingredient";
-import { Array, Option, pipe } from "effect";
-import { useActionState } from "react";
 
+type EditIngredientFromProps = {
+  ingredient?: Ingredient | GroupedIngredient
+}
 
-const EditIngredientFrom = () => {
+const EditIngredientFrom = (props: EditIngredientFromProps) => {
   const [state, addIngredientAction] = useActionState(addIngredient, {
-    formData: {},
+    formData: {
+      description: props?.ingredient?.description
+    },
     errors: {}
   });
 

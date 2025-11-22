@@ -1,5 +1,6 @@
-import EditIngredientFrom from '@/features/ingredient/edit-ingredient-form';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+
+import EditIngredientFrom from '@/features/ingredient/edit-ingredient-form';
 
 const meta = {
   component: EditIngredientFrom,

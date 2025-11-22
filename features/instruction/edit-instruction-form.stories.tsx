@@ -1,5 +1,6 @@
-import EditInstructionForm from '@/features/instruction/edit-instruction-form';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+
+import EditInstructionForm from '@/features/instruction/edit-instruction-form';
 
 const meta = {
   component: EditInstructionForm,

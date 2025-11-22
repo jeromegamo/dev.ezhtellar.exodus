@@ -1,15 +1,16 @@
+import { Array,Option, pipe, String } from "effect";
+import { LucidePencil, LucidePlus, LucideSave, LucideTrash } from "lucide-react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Field, FieldGroup, FieldLabel, FieldSet } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import Ingredient from "@/domain/Ingredients";
+import Ingredient from "@/domain/Ingredient";
 import Recipe from "@/domain/Recipe";
 import StepInstruction from "@/domain/StepInstruction";
-import { Option, String, Array } from "effect";
-import { LucideSave, LucidePencil, LucidePlus, LucideTrash } from "lucide-react";
-import Link from "next/link";
-import { notFound } from "next/navigation";
 
 export type EditRecipeFormProps = {
   recipe: Option.Option<Recipe>
@@ -50,59 +51,19 @@ const EditRecipeForm = (props: EditRecipeFormProps) => {
         </FieldSet>
         <h2 className="text-2xl mt-6 mb-4">Ingredients</h2>
         <FieldSet>
-          {recipe.ingredients.pipe(
-            Option.map(ingredients => Array.map(ingredients, ingredient => (
-              <EditableIngredientItem key={ingredient.id} ingredient={ingredient} />
-            ))),
-            Option.getOrNull
-          )}
           <Button>
             <LucidePlus />
             Add Ingredient
           </Button>
         </FieldSet>
 
-        <h2 className="text-2xl mt-6 mb-4">Grouped Ingredients</h2>
-        <FieldSet>
-          {recipe.groupedIngredients.pipe(
-            Option.map(groups => Array.map(groups, group => (
-              <Card className="p-4" key={group.id}>
-                <Field>
-                  <FieldLabel htmlFor="groupDescription">Group Description</FieldLabel>
-                  <Input
-                    id="groupDescription"
-                    name="groupDescription"
-                    type="text"
-                    defaultValue={group.description}
-                  />
-                </Field>
-                <h2 className="text-2xl mt-6 mb-4">Ingredients</h2>
-                <FieldSet>
-                  {Array.map(group.ingredients, ingredient => (
-                    <EditableIngredientItem key={ingredient.id} ingredient={ingredient} />
-                  ))}
-                  <Button>
-                    <LucidePlus />
-                    Add Ingredient
-                  </Button>
-                </FieldSet>
-              </Card>
-            ))),
-            Option.getOrNull
-          )}
-          <Button>
-            <LucidePlus />
-            Add Grouped Ingredient
-          </Button>
-        </FieldSet>
-
         <h2 className="text-2xl mt-6 mb-4">Instructions</h2>
         <FieldSet>
-          {recipe.instructions.pipe(
-            Option.map(steps => Array.map(steps, step => (
+          {pipe(
+            recipe.instructions,
+            Array.map(step => (
               <EditableInstructionItem key={step.id} instruction={step} />
-            ))),
-            Option.getOrNull
+            ))
           )}
           <Button asChild>
             <Link href="/recipes/1/edit/instruction">
@@ -140,12 +101,8 @@ const EditableIngredientItem = (props: EditableIngredientItemProps) => {
     <Card className="p-4">
       <div className="flex flex-col gap-y-2">
         <div className="flex-1 text-left lowercase">
-          {ingredient.multiplier > 0
-            ? `${ingredient.multiplier} ` 
-            : String.empty 
-          }
           {ingredient.measurement.pipe(
-            Option.map(m => `${m.value} ${m.unit} `),
+            Option.map(m => `${m.value} ${m._tag === "AmountMeasurement" ? String.empty : m.unit} `),
             Option.getOrElse(() => String.empty)
           )} 
           {ingredient.description}

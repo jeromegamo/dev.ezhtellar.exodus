@@ -1,7 +1,8 @@
+import { redirect } from "next/navigation";
+
 import { Button } from "@/components/ui/button";
 import { Field, FieldGroup, FieldLabel, FieldSet } from "@/components/ui/field";
 import { Textarea } from "@/components/ui/textarea";
-import { redirect } from "next/navigation";
 
 const EditInstructionForm = () => {
   const saveAction = async () => {

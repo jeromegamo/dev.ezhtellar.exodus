@@ -1,16 +1,16 @@
-import { Data } from "effect"
-import Ingredient from "./Ingredients"
+import { Schema } from "effect"
 
-interface GroupedIngredient {
-  id: string
-  _tag: "GroupedIngredient"
-  recipeId: string
-  description: string
-  ingredients: Ingredient[] 
-}
+import GroupedIngredientId from "@/domain/GroupedIngredientId"
+import Ingredient from "@/domain/Ingredient"
+import RecipeId from "@/domain/RecipeId"
 
-const GroupedIngredient = {
-  make: Data.tagged<GroupedIngredient>("GroupedIngredient")
-}
-
-export default GroupedIngredient;
+export default class GroupedIngredient
+extends Schema.TaggedClass<GroupedIngredient>()(
+  "GroupedIngredient",
+  {  
+    id: GroupedIngredientId,
+    recipeId: RecipeId,
+    description: Schema.NonEmptyString,
+    ingredients: Schema.Array(Ingredient)
+  }
+) {}

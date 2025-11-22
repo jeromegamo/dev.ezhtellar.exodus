@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button";
-import Recipe from "@/domain/Recipe";
-import RecipeCard from "@/features/recipe-card/recipe-card";
 import { Array } from "effect";
 import { LucidePlus } from "lucide-react";
 import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
+import Recipe from "@/domain/Recipe";
+import RecipeCard from "@/features/recipe-card/recipe-card";
 
 export type RecipeListProps = {
   recipeListItems: Recipe[]

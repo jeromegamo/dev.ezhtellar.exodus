@@ -1,36 +1,32 @@
-import { Option } from "effect"
-import Ingredient from "@/domain/Ingredients"
+import { Schema } from "effect"
+
 import GroupedIngredient from "@/domain/GroupedIngredient"
-import StepInstrucion from "@/domain/StepInstruction"
+import Ingredient from "@/domain/Ingredient"
+import MacroNutrients from "@/domain/MacroNutrients"
+import RecipeId from "@/domain/RecipeId"
+import StepInstruction from "@/domain/StepInstruction"
 
-export type RecipeClassification =
-  | "breakfast"
-  | "soup"
-  | "salad"
-  | "meat"
-  | "seafood"
-  | "vegetarian"
-  | "side-dish"
-  | "snacks"
-  | "condiment"
+const RecipeClassification = Schema.Literal(
+  "Breakfast",
+  "Soup",
+  "Salad",
+  "Meat",
+  "Seafood",
+  "Vegetarian",
+  "Side-dish",
+  "Snacks",
+  "Condiment",
+)
 
-export interface MacroNutrients {
-  id: string
-  recipeId: string,
-  calories: number
-  protein: number
-  carbohydrates: number
-  fat: number
-}
+export type RecipeClassification = Schema.Schema.Type<typeof RecipeClassification>
 
-export default interface Recipe {
-  id: string
-  classification: RecipeClassification
-  headnote: Option.Option<string>
-  name: string
-  slug: string
-  macros: MacroNutrients
-  ingredients: Option.Option<Ingredient[]>
-  groupedIngredients: Option.Option<GroupedIngredient[]>
-  instructions: Option.Option<StepInstrucion[]>
-}
+export default class Recipe extends Schema.Class<Recipe>("Recipe")({
+  id: RecipeId,
+  classification: RecipeClassification,
+  headnote: Schema.optionalWith(Schema.String, { as: "Option" }),
+  name: Schema.NonEmptyString,
+  slug: Schema.NonEmptyString,
+  macros: MacroNutrients,
+  ingredients: Schema.Array(Schema.Union(Ingredient, GroupedIngredient)),
+  instructions: Schema.Array(StepInstruction)
+}) { }
