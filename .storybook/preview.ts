@@ -1,4 +1,5 @@
 import '../app/globals.css';
+
 import { definePreview } from '@storybook/nextjs-vite'
 
 export default definePreview({ 
